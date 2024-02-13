@@ -1,0 +1,152 @@
+
+ RFC: CACX7605101P8
+ Nombre:  XOCHILT CASAS CHAVEZ\n Mensaje: 401 - El rango de la fecha de generación no debe de ser mayor a 72 horas para la emisión del timbre.\n Mensaje Detalle: Comprobante.Fecha: Fecha de emisión: 2022-04-19T12:42:24 Fecha del Servidor: 2022-04-27T13:13:24 La fecha de emision  no se encuentra en el rango permitido: 2022-04-24T13:13:24 - 2022-04-27T13:18:24\n JSON: {
+    "Version": "3.3",
+    "Serie": "CPM",
+    "Folio": "31",
+    "Fecha": "2022-04-19 12:42:24",
+    "SubTotal": 0,
+    "Total": 0,
+    "TipoDeComprobante": "T",
+    "NoCertificado": "30001000000400002335",
+    "LugarExpedicion": "45138",
+    "CfdiRelacionados": {
+        "CfdiRelacionado": [
+            {
+                "UUID": "59AB274B-6CBC-4176-9BD7-BB67B28D3EA4"
+            }
+        ],
+        "TipoRelacion": "04"
+    },
+    "Impuestos": null,
+    "Moneda": "XXX",
+    "Emisor": {
+        "Rfc": "CACX7605101P8",
+        "Nombre": " XOCHILT CASAS CHAVEZ",
+        "RegimenFiscal": "626"
+    },
+    "Receptor": {
+        "Rfc": "CACX7605101P8",
+        "Nombre": "XOCHILT CASAS CHAVEZ",
+        "UsoCFDI": "P01"
+    },
+    "Conceptos": [
+        {
+            "ClaveProdServ": "78101503",
+            "NoIdentificacion": "01",
+            "Cantidad": "1",
+            "ClaveUnidad": "E48",
+            "Unidad": "Servicio",
+            "Descripcion": "Flete",
+            "ValorUnitario": 0,
+            "Importe": 0
+        }
+    ],
+    "Complemento": [
+        {
+            "Any": [
+                {
+                    "cartaporte20:CartaPorte": {
+                        "Version": "2.0",
+                        "FiguraTransporte": [
+                            {
+                                "Domicilio": {
+                                    "Calle": "calle ejemplo",
+                                    "CodigoPostal": "45080",
+                                    "Estado": "JAL",
+                                    "NumeroExterior": "123",
+                                    "Pais": "MEX"
+                                },
+                                "NombreFigura": "Pedro Sanchez",
+                                "NumLicencia": "2312312",
+                                "RFCFigura": "WERX631016S30",
+                                "TipoFigura": "01"
+                            }
+                        ],
+                        "Mercancias": {
+                            "Autotransporte": {
+                                "IdentificacionVehicular": {
+                                    "AnioModeloVM": "2018",
+                                    "ConfigVehicular": "C2",
+                                    "PlacaVM": "JMS121"
+                                },
+                                "NumPermisoSCT": "3212",
+                                "PermSCT": "TPAF02",
+                                "Seguros": {
+                                    "AseguraCarga": "HDI",
+                                    "AseguraRespCivil": "GNP",
+                                    "PolizaCarga": "123213",
+                                    "PolizaRespCivil": "809123809",
+                                    "PrimaSeguro": "100000.00"
+                                }
+                            },
+                            "CargoPorTasacionSpecified": false,
+                            "Mercancia": [
+                                {
+                                    "BienesTransp": "24121803",
+                                    "Cantidad": "5",
+                                    "CantidadTransporta": [
+                                        {
+                                            "Cantidad": "5",
+                                            "IDDestino": "DE000001",
+                                            "IDOrigen": "OR000001"
+                                        }
+                                    ],
+                                    "ClaveUnidad": "H87",
+                                    "Descripcion": "Ponche Artesanal las talegas de apolonio",
+                                    "Dimensiones": "10\/20\/10cm",
+                                    "MonedaSpecified": false,
+                                    "PesoEnKg": "5",
+                                    "Unidad": "pieza",
+                                    "MaterialPeligroso": "No",
+                                    "MaterialPeligrosoSpecified": true
+                                }
+                            ],
+                            "NumTotalMercancias": "1",
+                            "NumberOfNodesTransports": 1,
+                            "PesoBrutoTotal": "5.0000",
+                            "PesoNetoTotalSpecified": false,
+                            "UnidadPeso": "KGM"
+                        },
+                        "TotalDistRec": "10.00",
+                        "TotalDistRecSpecified": true,
+                        "TranspInternac": "No",
+                        "Ubicaciones": [
+                            {
+                                "Domicilio": {
+                                    "Calle": "calle ejemplo",
+                                    "CodigoPostal": "45000",
+                                    "Estado": "JAL",
+                                    "NumeroExterior": "123",
+                                    "Pais": "MEX"
+                                },
+                                "FechaHoraSalidaLlegada": "2022-03-09T00:18:10",
+                                "IDUbicacion": "OR000001",
+                                "NombreRemitenteDestinatario": "Pedro Sanchez",
+                                "RFCRemitenteDestinatario": "XAXX010101000",
+                                "TipoUbicacion": "Origen"
+                            },
+                            {
+                                "DistanciaRecorrida": "10",
+                                "DistanciaRecorridaSpecified": true,
+                                "Domicilio": {
+                                    "Calle": "ejemplo",
+                                    "CodigoPostal": "45085",
+                                    "Estado": "JAL",
+                                    "NumeroExterior": "123",
+                                    "Pais": "MEX"
+                                },
+                                "FechaHoraSalidaLlegada": "2022-03-10T00:18:10",
+                                "IDUbicacion": "DE000001",
+                                "NombreRemitenteDestinatario": "Marie Olsen",
+                                "RFCRemitenteDestinatario": "XAXX010101000",
+                                "TipoEstacionSpecified": false,
+                                "TipoUbicacion": "Destino"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,163 @@
+<html>
+
+<head></head>
+
+<body>
+    <div style='margin-left:auto; margin-right: auto; width:650px;'>
+        <table style='width:650px; font-size:14px'>
+            <tr>
+                <td>
+                    <img height='70' width='220' style='max-height: 70px; height:70px;max-width:220px' src='https://cartaportemexico.com/images/logoscpm2178x63.png?crc=449637831 alt=' No se encontro la imagen ' />
+                </td>
+                <td style=' width:10px '></td>
+                <td style=' text-align:left;border:1px solid #acb7c0; border-radius: 10px; padding: 10px; width:420px '><b>Folio Fiscal(UUID): " . $dataJson->uuid . "</b><br>
+                        Certificado Digital SAT: " . $dataJson->noCertificadoSAT . "<br>
+                        Certificado Sello Digital No: " . $dataJson->noCertificadoCFDI . " <br>
+                        Fecha Certificacion: " . $dataJson->fechaTimbrado." <br>
+                        RFC Prov. Certificacion: SPR190613I52<br>
+                        Lugar Expedicion:" . $empresa->cp . "<br>
+                        Version CFDI: 3.3<br>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+            
+        <table>
+            <tr>
+                <td style=' border:1px solid #acb7c0; border-radius: 10px; width:310px; padding:10px '><b>Emisor:</b> <br>
+                    <b>RFC:" . $empresa->rfc . "</b> <br>
+                    <b>" . $empresa->nombrefiscal ."</b> <br>
+                        ". $empresa->cp ."<br>
+                        ". $empresa->estado ." <br>
+                        ". $empresa->regimenfiscal ." <br>
+                </td>
+                <td style=' width:10px '></td>
+                <td style=' border:1px solid #acb7c0; border-radius: 10px; width:300px; padding:10px '>
+                    <b>Carta PorteNo.: " . $cpResponse->folio . "</b><br>
+                        Fecha Emision:" . $cpResponse->fecha . "<br>
+                        Condiciones de Pago: Contado <br>
+                        Metodo Pago: " . $cpResponse->metodopago . "<br>
+                        Forma de pago: " . $cpResponse->formapago . "<br>
+                        Moneda: MXN <br>
+                        Tipo Comprobante:  " . $cpResponse->tipocomprobante . "</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td style=' border:1px solid #acb7c0; border-radius: 10px; width:650px; padding:10px '><b>Receptor</b><br>
+                    <b>RFC: " . $cpResponse->rfc . "</b> <br>
+                        " . $cpResponse->nombre . " <br>
+                        " . $cpResponse->codigopostal . " <br>
+                        Uso CFDI: ". $cpResponse->usocfdi . "</td>
+            </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td style=' border:1px solid #acb7c0; border-radius: 10px; width:650px; padding:10px '><b>Complemento Carta Porte</b><br>
+                        Versión: 2.0 Total Dist Recorrida: " . $cpResponse->totaldistrec . $transporteint . " Via: 01</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td style=' border:1px solid #acb7c0; border-radius: 10px; width:650px; padding:10px '>
+                        <b>Transporte</b><br>
+                            Placas: " . trim($vehiculo->placas) . "  Año de Fabricacion: " . trim($vehiculo->ano) ."   Permiso SCT: " . trim($vehiculo->tipopermisosct) . "   Num Permiso SCT: " . trim($vehiculo->numpermiso) . "   Configuración Vehicular: " . trim($vehiculo->configautotransportefed) . " <br>
+                            Aseguradora Resp/Civil: " . trim($aseguradoraRespCivil->aseguradora) . " Poliza Resp Civil: " . trim($polizaRespCivil->poliza) . "  Prima Seguro: " . trim($polizaRespCivil->primaseguro) . " <br>                             
+                            " . $remolquehtml . "
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td style=' border:1px solid #acb7c0; border-radius: 10px; width:650px; padding:10px '>
+                        <b>Figura Transporte</b><br>
+                            Tipo Figura: 01  RFC: " . trim($chofer->rfc) . "   Num Licencia: " . trim($chofer->numlicencia) . "   Codigo Postal: " . trim($chofer->cp) . " <br> 
+                            " . $figuraTransportehtml . "
+                            
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td style=' border:1px solid #acb7c0; border-radius: 10px; width:650px; padding:10px '>
+                        <b>Conceptos</b><br>
+                        Descripcion " . trim($conceptoResource->descripcion) . " <br>
+                            Clave PyS: " . trim($conceptoResource->claveprodserv) . "   Clave Unidad: " . trim($conceptoResource->claveunidad) . "   Clave: " . trim($conceptoResource->clavearticulo) . "   Unidad Medida: " .  $conceptoResource->presentacion . " <br>
+                            Cantidad: " . $conceptoResource->cantidad . "   Valor Unitario: " . $conceptoResource->precio . $conceptohtml . "
+                            
+                    </td>
+                </tr>
+            </table>
+
+
+            <table style=' '>
+                <tr>
+                    <td style='border:1px solid #acb7c0; border-radius: 10px; width:650px; text-align: left; padding: 10px '><b>Origen:</b><br>
+                        ". $cpOrigen->nombre  . " <br>
+                            Residencia Fiscal: ". $cpOrigen->residenciafiscal ." <br>
+                            ". $cpOrigen->rfc ." <br>
+                            ". $cpOrigen->fechasalidallegada ." ". $cpOrigen->horasalidallegada ." <br>
+                            País Origen: ". $cpOrigen->pais." <br>
+                        ". $cpOrigen->calle ." ". $cpOrigen->numext ." - ". $cpOrigen->numint .", ". $cpOrigen->c_colonia ." - " . $cpOrigen->colonia .", ". $cpOrigen->cp .", ". $cpOrigen->c_municpio ." - ". $cpOrigen->municipio .", ". $cpOrigen->clave_entfed." - ". $cpOrigen->estado ."
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <!-- Destino --><table style=' '><tr>
+                <td style=' border:1px solid #acb7c0; border-radius: 10px; width:650px; text-align: left; padding: 10px '><b>Destino:</b><br>
+                    ". $cpDestino->nombre ."<br>
+                        Residencia Fiscal: ". $cpDestino->residenciafiscal ." <br>
+                        ". $cpDestino->rfc ." <br>
+                        ". $cpDestino->fechasalidallegada ." ". $cpDestino->horasalidallegada ." <br>
+                        País Origen: ". $cpDestino->pais." <br>
+                    ". $cpDestino->calle ." ". $cpDestino->numext ." - ". $cpDestino->numint .", ". $cpDestino->c_colonia ." - " . $cpDestino->colonia .", ". $cpDestino->cp .", ". $cpDestino->c_municpio ." - ". $cpDestino->municipio .", ". $cpDestino->clave_entfed." - ". $cpDestino->estado ."</td>
+                </tr>
+                </table>
+                <br>
+                <!-- Mercancia --><b style=' text-align: left; padding: 10px '>Mercancia:</b><br>
+                <table style=' '>
+                    " . mercanciahtml . "
+                    </table>
+                    <br>
+                    <table style=' margin-left:auto; margin-right: auto; width:650px; font-size: 8px '><tr>
+                        <td style=' width:470px; '><div style=' border-top:2pxsolid #acb7c0; width:470px; '></div><table style=' width:470px; '><tr>
+                        <td style=' max-width: 470px; width:470px; word-break: break-all; font-size:8px '><b>Cadena Original delComplemento de certificacion digital del SAT:</b> <br>
+                                " . $cadenaoriginalsat1 . " <br>
+                                " . $cadenaoriginalsat2 . " <br>
+                                " . $cadenaoriginalsat3 . " <br>
+                                " . $cadenaoriginalsat4 . " <br>
+                                " . $cadenaoriginalsat5 . "
+                        </td>
+                </tr>
+            </table>
+            <div style=' border-top:1px solid #acb7c0; '></div><table style=' width:470px; '><tr>
+                <td style=' width:470px; word-break: break-all; font-size:8px '><b>Sello Digital delEmisor:</b> <br>
+                        " . $selloCFDI . " <br>
+                        " . $selloCFDI2 . "<br>
+                        " . $selloCFDI3 . "<br>
+                        " . $selloCFDI4 . "
+                </td>
+                </tr>
+            </table>
+            <div style=' border-top:1px solid #acb7c0; '></div><table style=' width:470px; '><tr>
+                <td style=' width:470px; word-break: break-all; font-size:8px '><b>Sello digital del SAT:</b><br>
+                    " . $selloSAT . "<br>
+                    " . $selloSAT2 . "<br>
+                    " . $selloSAT3 . "<br>
+                    " . $selloSAT4 . "<br>
+
+                    </td>
+                </tr>
+            </table>
+        </td>
+                    <td style=' width:180px; '>
+                        <img height=' 180 ' width=' 180 ' style=' max-height: 180px; height:180px;max-width:180px ' 
+                        src='https://ubuntu.cartaportemexico.com/xml/ " . $resultadoJson->data->uuid . ".png ' alt=' No se encontrola imagen ' /></td>
+                </tr>
+                </table>
+                    <!-- </footer> --><div style=' width:650px;font-size:8px; font-style: oblique; text-align: left; padding:5px '>* Este documento es una representacion impresa de un CFDI</div><div style=' width:650px;font-size:8px; font-style: oblique;
+                        text-align: right '>Este documento fue creado con Carta Porte Mexico (<a href=' http://www.cartaportemexico.com
+                        '>cartaportemexico.com</a>)</div></body><style>footer {position: fixed;bottom: 0cm;left: 0cm;right: 0cm;height: 2cm;font-size: 10px;}</style></html>
